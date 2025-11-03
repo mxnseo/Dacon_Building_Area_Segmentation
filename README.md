@@ -29,36 +29,41 @@ pip install -r requirements.txt
 
 **data 디렉터리에 .csv file 포함**
 
+<br />
 
 ### Dataset Info
 - **train_img**
- - TRAIN_0000.png ~ TRAIN_7139.png
- - 1024 x 1024
+  - TRAIN_0000.png ~ TRAIN_7139.png
+  - 1024 x 1024
 
+<br />
 
 - **test_img**
- - TEST_00000.png ~ TEST_60639.png
- - 224 x 224
+  - TEST_00000.png ~ TEST_60639.png
+  - 224 x 224
 
+<br />
 
 - **train.csv**
- - img_id : 학습 위성 이미지 샘플 ID
- - img_path : 학습 위성 이미지 경로 (상대 경로)
- - mask_rle : RLE 인코딩된 이진마스크(0 : 배경, 1 : 건물) 정보
+  - img_id : 학습 위성 이미지 샘플 ID
+  - img_path : 학습 위성 이미지 경로 (상대 경로)
+  - mask_rle : RLE 인코딩된 이진마스크(0 : 배경, 1 : 건물) 정보
 
 학습 위성 이미지에는 반드시 건물이 포함.
 그러나 추론 위성 이미지에는 건물이 포함되어 있지 않음.
 학습 위성 이미지의 촬영 해상도는 0.5m/픽셀이며, 추론 위성 이미지의 촬영 해상도는 공개하지 않음.
 
+<br />
 
 - **test.csv**
- - img_id : 추론 위성 이미지 샘플 ID
- - img_path : 추론 위성 이미지 경로 (상대 경로)
+  - img_id : 추론 위성 이미지 샘플 ID
+  - img_path : 추론 위성 이미지 경로 (상대 경로)
 
+<br />
 
 - **sample_submission.csv** - 제출 양식
- - img_id : 추론 위성 이미지 샘플 ID
- - mask_rle : RLE 인코딩된 예측 이진마스크(0: 배경, 1 : 건물) 정보
+  - img_id : 추론 위성 이미지 샘플 ID
+  - mask_rle : RLE 인코딩된 예측 이진마스크(0: 배경, 1 : 건물) 정보
 
 단, 예측 결과에 건물이 없는 경우 반드시 -1 처리
 
