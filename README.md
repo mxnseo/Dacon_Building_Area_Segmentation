@@ -17,7 +17,7 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 ```
 
 ```text
-conda install -c conda-forge pandas opencv tqdm albumentations
+pip install -r requirements.txt
 ```
 
 <br />
