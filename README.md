@@ -1,4 +1,5 @@
 # Satellite Image Building Area Segmentation
+https://dacon.io/competitions/official/236092/overview/description
 
 Windows11, Anaconda, RTX 5070 GPU 1개
 
