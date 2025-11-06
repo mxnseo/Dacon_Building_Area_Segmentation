@@ -41,13 +41,13 @@ def main():
     start_epoch = 0
     global_step = 0
 
-    ckpt_files = glob.glob(os.path.join(CHECKPOINT_DIR, "check_point_*.pth"))
+    ckpt_files = glob.glob(os.path.join(CHECKPOINT_DIR, "checkpoint_*.pth"))
     
     if ckpt_files:
         latest_epoch = -1
         latest_ckpt_path = ""
         for ckpt_path in ckpt_files:
-            match = re.search(r'check_point_(\d+).pth', ckpt_path)
+            match = re.search(r'checkpoint_(\d+).pth', ckpt_path)
             if match:
                 epoch_num = int(match.group(1))
                 if epoch_num > latest_epoch:
@@ -66,11 +66,11 @@ def main():
             print(f"--- Resuming training from epoch {start_epoch + 1} ---")
 
     
-    for epoch in range(start_epoch, 50):
+    for epoch in range(start_epoch, 200):
         model.train()
         epoch_loss = 0
         
-        pbar = tqdm(dataloader, desc=f"Epoch {epoch+1}/{50}")
+        pbar = tqdm(dataloader, desc=f"Epoch {epoch+1}/{200}")
         
         for images, masks in pbar:
             images = images.float().to(device)
@@ -94,7 +94,7 @@ def main():
         
         writer.add_scalar('Loss/train_epoch', avg_epoch_loss, epoch + 1)
         
-        checkpoint_path = os.path.join(CHECKPOINT_DIR, f'check_point_{epoch + 1}.pth')
+        checkpoint_path = os.path.join(CHECKPOINT_DIR, f'checkpoint_{epoch + 1}.pth')
         
         torch.save({
             'epoch': epoch + 1,
