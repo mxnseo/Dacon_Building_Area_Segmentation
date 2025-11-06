@@ -1,3 +1,6 @@
+import os
+import glob
+import re
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
@@ -5,9 +8,6 @@ from tqdm import tqdm
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 from torch.utils.tensorboard import SummaryWriter
-import os
-import glob
-import re
 
 from utils.dataset import SatelliteDataset 
 from model.deeplabv3 import get_model 
