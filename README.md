@@ -132,5 +132,10 @@ Name: mask_coverage_ratio, dtype: float64
 
 <img width="2000" height="500" alt="train_test_comparison" src="https://github.com/user-attachments/assets/40d97f86-d12f-4fa7-b80f-159d763471a1" />
 
+<br />
+
+train에 비해 test가 더 낮은 고도에서 촬영된 것을 확인할 수 있음
+
+resize + scaling 고려
 
 
