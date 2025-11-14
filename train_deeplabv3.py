@@ -129,7 +129,7 @@ def main():
         # 검증(Validation) 시작
         avg_val_dice = evaluate(model, val_dataloader, device)
         print(f"Epoch {epoch+1}, Average Validation Dice: {avg_val_dice:.6f}")
-        writer.add_scalar('Loss/validation_epoch', avg_val_dice, epoch + 1)
+        writer.add_scalar('Dice/validation_epoch', avg_val_dice, epoch + 1)
 
         
         if avg_val_dice > best_val_dice:
@@ -153,23 +153,24 @@ def main():
         print(f"--- Checkpoint saved: {checkpoint_path} ---") # 로그 출력
     
     all_ckpts = glob.glob(os.path.join(CHECKPOINT_DIR, "checkpoint_*.pth"))
+    
     if len(all_ckpts) > MAX_CKPTS_SAVED:
-		    ckpt_list_with_epochs = []
-		    for ckpt_path in all_ckpts:
-				    match = re.search(r'checkpoint_(\d+).pth', ckpt_path)
-				    if match:
-						    epoch_num = int(match.group(1))
-						    ckpt_list_with_epochs.append((epoch_num, ckpt_path))
-				ckpt_list_with_epochs.sort(key=lamda x: x[0])
-				
-				num_to_delete = len(ckpt_list_with_epochs) - MAX_CKPTS_SAVED
-				
-				for epoch_num, file_path in ckpt_list_with_epochs[:num_to_delete]:
-						print(f"--- Delete old checkpoint: {file_path} ---")
-						try:
-								os.remone(file_path)
-						except OSError as e:
-								print(f"Error delete checkpoint {file_path}: {e}")
+        ckpt_list_with_epochs = []
+        
+        for ckpt_path in all_ckpts:
+            match = re.search(r'checkpoint_(\d+).pth', ckpt_path)
+            if match:
+                epoch_num = int(match.group(1))
+                ckpt_list_with_epochs.append((epoch_num, ckpt_path))
+        
+        ckpt_list_with_epochs.sort(key=lambda x : x[0])
+        num_to_delete = len(ckpt_list_with_epochs) - MAX_CKPTS_SAVED
+        for epoch_num, file_path in ckpt_list_with_epochs[:num_to_delete]:
+            print(f"--- Delete old checkpoint: {file_path} ---")
+            try:
+                os.remove(file_path)
+            except OSError as e:
+                print(f"Error delete checkpoint {file_path}: {e}")
             
     print("Training finished. All checkpoints saved.")
     
