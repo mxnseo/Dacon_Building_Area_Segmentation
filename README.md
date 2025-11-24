@@ -6,7 +6,7 @@ Windows11, Anaconda, RTX 5070 GPU 1개
 <br />
 
 ## 가상환경 구축
-
+### GPU 5070
 ```text
 conda create -n segmentation python=3.10 -y
 
@@ -20,6 +20,10 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 ```text
 pip install -r requirements.txt
 ```
+
+<br />
+
+### GPU 4070
 
 <br />
 
