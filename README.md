@@ -1,7 +1,7 @@
 # Satellite Image Building Area Segmentation
 https://dacon.io/competitions/official/236092/overview/description
 
-Windows11, Anaconda, RTX 5070 GPU 1개
+Windows11, Anaconda, RTX 5070 GPU (or RTX 4070 SUPER)
 
 <br />
 
@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 <br />
 
-### GPU 4070
+### GPU 4070 SUPER
 
 <br />
 
