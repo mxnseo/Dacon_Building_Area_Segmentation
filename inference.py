@@ -8,7 +8,6 @@ from albumentations.pytorch import ToTensorV2
 
 from utils.dataset import SatelliteDataset
 from utils.utils import rle_encode
-# from model.deeplabv3 import get_model
 from model.DeepLabV3Plus import get_model
 
 def main():
