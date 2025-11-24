@@ -31,7 +31,7 @@ conda actiavte segmemtation
 ```
 
 ```text
-pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu130
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 ```text
