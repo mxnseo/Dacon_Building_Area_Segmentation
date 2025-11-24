@@ -49,11 +49,6 @@ import torch.nn as nn
 from torchvision.models.segmentation import deeplabv3_resnet50, DeepLabV3_ResNet50_Weights
 
 def get_model(num_classes=1, pretrained=True):
-    """
-    사전 학습된 DeepLabv3 (ResNet50 백본) 모델을 불러옴
-    최종 출력 레이어를 주어진 num_classes에 맞게 수정
-    """
-
     if pretrained:
         weights = DeepLabV3_ResNet50_Weights.DEFAULT
     else:
