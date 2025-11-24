@@ -18,12 +18,25 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 ```
 
 ```text
-pip install -r requirements.txt
+pip install -r requirements_5070.txt
 ```
 
 <br />
 
 ### GPU 4070 SUPER
+```text
+conda create -n segmentation python=3.10 -y
+
+conda actiavte segmemtation
+```
+
+```text
+pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu130
+```
+
+```text
+pip install -r requirements_4070.txt
+```
 
 <br />
 
