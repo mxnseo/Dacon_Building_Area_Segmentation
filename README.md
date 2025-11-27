@@ -1,12 +1,12 @@
 # Satellite Image Building Area Segmentation
 https://dacon.io/competitions/official/236092/overview/description
 
-Windows11, Anaconda, RTX 5070 GPU 1개
+Windows11, Anaconda, RTX 5070 GPU (or RTX 4070 SUPER)
 
 <br />
 
 ## 가상환경 구축
-
+### GPU 5070
 ```text
 conda create -n segmentation python=3.10 -y
 
@@ -18,7 +18,24 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 ```
 
 ```text
-pip install -r requirements.txt
+pip install -r requirements_5070.txt
+```
+
+<br />
+
+### GPU 4070 SUPER
+```text
+conda create -n segmentation python=3.10 -y
+
+conda actiavte segmemtation
+```
+
+```text
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
+```text
+pip install -r requirements_4070.txt
 ```
 
 <br />

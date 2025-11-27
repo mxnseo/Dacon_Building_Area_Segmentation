@@ -4,11 +4,11 @@ import numpy as np
 
 
 # 원본 'train.csv' 파일의 경로
-ORIGINAL_CSV_PATH = '../data/train.csv'
+ORIGINAL_CSV_PATH = 'C:/data/DBAS/train.csv'
 
 # 새로 생성될 학습/검증 CSV 파일 경로
-OUTPUT_TRAIN_PATH = '../data/train.csv'
-OUTPUT_VAL_PATH = '../data/val.csv'
+OUTPUT_TRAIN_PATH = 'C:/data/DBAS/train.csv'
+OUTPUT_VAL_PATH = 'C:/data/DBAS/val.csv'
 
 # 검증 데이터셋의 비율 (0.2 = 20%)
 VAL_RATIO = 0.2

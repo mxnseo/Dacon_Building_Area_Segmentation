@@ -31,8 +31,8 @@ def main():
     CHECKPOINT_DIR = 'output/ckpt'
     
     # (학습/검증 데이터 경로 확인)
-    TRAIN_CSV_PATH = '../data/train.csv' 
-    VAL_CSV_PATH = '../data/val.csv'     
+    TRAIN_CSV_PATH = 'C:/data/DBAS/train.csv' 
+    VAL_CSV_PATH = 'C:/data/DBAS/val.csv'     
     
     EPOCHS = 30
     BATCH_SIZE = 16

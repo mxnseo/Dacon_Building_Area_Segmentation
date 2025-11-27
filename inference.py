@@ -14,7 +14,11 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = get_model(num_classes=1, pretrained=False).to(device)
     
+<<<<<<< HEAD
     checkpoint_path = './output/ckpt/checkpoint_12.pth'
+=======
+    checkpoint_path = './output/ckpt/checkpoint_1.pth'
+>>>>>>> 7658e1ea3219617345c72580ce3ff69580d33669
 
     checkpoint = torch.load(checkpoint_path, map_location=device)
     model.load_state_dict(checkpoint['model_state_dict'])
@@ -78,6 +82,7 @@ def main():
                 else:
                     result.append(mask_rle)
 
+<<<<<<< HEAD
     avg_latency = (total_inference_time / total_images) * 1000
     fps = total_images / total_inference_time
     
@@ -87,6 +92,10 @@ def main():
     print(f"FPS: {fps:.2f}")
 
     submit = pd.read_csv('../data/sample_submission.csv')
+=======
+    # Submission
+    submit = pd.read_csv('C:/data/DBAS/sample_submission.csv')
+>>>>>>> 7658e1ea3219617345c72580ce3ff69580d33669
     submit['mask_rle'] = result
     submit.to_csv('./deeplabv3_Unet_submit.csv', index=False)
     print("Submission file created")
