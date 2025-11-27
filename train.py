@@ -13,7 +13,17 @@ from utils.dataset import SatelliteDataset
 from model.deeplabv3 import get_model
 from utils.validation import evaluate, dice_score 
 
+def set_seed(seed=42): # 시드 고정 함수
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
 def main():
+    set_seed(42) # 시드 고정
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # --- 경로 및 설정 ---
@@ -24,7 +34,7 @@ def main():
     TRAIN_CSV_PATH = '../data/train.csv' 
     VAL_CSV_PATH = '../data/val.csv'     
     
-    EPOCHS = 20
+    EPOCHS = 30
     BATCH_SIZE = 16
     MAX_CKPTS_SAVED = 10 # (유지할 최대 체크포인트)
     # --- ---
@@ -65,7 +75,7 @@ def main():
 
     model = get_model(num_classes=1).to(device)
     criterion = torch.nn.BCEWithLogitsLoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=0.0001, weight_decay=1e-2)
 
     start_epoch = 0
     global_step = 0
