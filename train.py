@@ -3,6 +3,8 @@ import glob
 import re
 import torch
 import torch.nn as nn
+import random
+import numpy as np
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 import albumentations as A
@@ -12,6 +14,7 @@ from torch.utils.tensorboard import SummaryWriter
 from utils.dataset import SatelliteDataset 
 from model.deeplabv3 import get_model
 from utils.validation import evaluate, dice_score 
+
 
 def set_seed(seed=42): # 시드 고정 함수
     random.seed(seed)
@@ -31,8 +34,8 @@ def main():
     CHECKPOINT_DIR = 'output/ckpt'
     
     # (학습/검증 데이터 경로 확인)
-    TRAIN_CSV_PATH = 'C:/data/DBAS/train.csv' 
-    VAL_CSV_PATH = 'C:/data/DBAS/val.csv'     
+    TRAIN_CSV_PATH = '../data/train.csv' 
+    VAL_CSV_PATH = '../data/val.csv'     
     
     EPOCHS = 30
     BATCH_SIZE = 16

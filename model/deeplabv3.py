@@ -106,43 +106,4 @@ class DeepLabV3_UNet(nn.Module):
 		return {'out': output}
 
 def get_model(num_classes=1, pretrained=True):
-<<<<<<< HEAD
 	return DeepLabV3_UNet(num_classes=num_classes, pretrained=pretrained)
-=======
-    return DeepLabV3(num_classes=num_classes, pretrained=pretrained)
-
-
-
-"""
-
-import torch
-import torch.nn as nn
-from torchvision.models.segmentation import deeplabv3_resnet50, DeepLabV3_ResNet50_Weights
-
-def get_model(num_classes=1, pretrained=True):
-    if pretrained:
-        weights = DeepLabV3_ResNet50_Weights.DEFAULT
-    else:
-        weights = None
-        
-    model = deeplabv3_resnet50(weights=weights, aux_loss=True)
-    
-    model.classifier[4] = nn.Conv2d(
-        256, # DeepLabv3 classifier의 마지막 in_channels
-        num_classes, # (배경/건물 = 1)
-        kernel_size=(1, 1),
-        stride=(1, 1)
-    )
-    
-    # 이것도 똑같이 1개 클래스로 변경
-    model.aux_classifier[4] = nn.Conv2d(
-        256, # DeepLabv3 aux_classifier의 마지막 in_channels
-        num_classes, 
-        kernel_size=(1, 1),
-        stride=(1, 1)
-    )
-    
-    return model
-    
-"""
->>>>>>> 7658e1ea3219617345c72580ce3ff69580d33669
