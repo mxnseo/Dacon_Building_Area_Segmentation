@@ -12,7 +12,7 @@ from albumentations.pytorch import ToTensorV2
 from torch.utils.tensorboard import SummaryWriter
 
 from utils.dataset import SatelliteDataset 
-from model.deeplabv3 import get_model
+from model.deeplabv3_Unet import get_model
 from utils.validation import evaluate, dice_score 
 
 
@@ -34,8 +34,8 @@ def main():
     CHECKPOINT_DIR = 'output/ckpt'
     
     # (학습/검증 데이터 경로 확인)
-    TRAIN_CSV_PATH = '../data/train.csv' 
-    VAL_CSV_PATH = '../data/val.csv'     
+    TRAIN_CSV_PATH = 'C:/data/DBAS/data/train.csv' 
+    VAL_CSV_PATH = 'C:/data/DBAS/data/val.csv'     
     
     EPOCHS = 30
     BATCH_SIZE = 16

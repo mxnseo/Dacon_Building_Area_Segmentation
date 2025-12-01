@@ -8,7 +8,7 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 from utils.dataset import SatelliteDataset
 from utils.utils import rle_encode
-from model.deeplabv3 import get_model
+from model.deeplabv3_Unet import get_model
 
 def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -30,7 +30,7 @@ def main():
     )
 
     test_dataset = SatelliteDataset(
-        csv_file='../data/test.csv',
+        csv_file='C:/data/DBAS/test.csv',
         transform=test_transform, 
         infer=True
     )
@@ -86,7 +86,7 @@ def main():
     print(f"Average Latency: {avg_latency:.2f} ms/image")
     print(f"FPS: {fps:.2f}")
 
-    submit = pd.read_csv('../data/sample_submission.csv')
+    submit = pd.read_csv('C:/data/DBAS/data/sample_submission.csv')
     submit['mask_rle'] = result
     submit.to_csv('./deeplabv3Plus_submit.csv', index=False)
     print("Submission file created")
