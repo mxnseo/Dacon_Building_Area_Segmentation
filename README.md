@@ -1,6 +1,4 @@
 # Satellite Image Building Area Segmentation
-https://dacon.io/competitions/official/236092/overview/description
-
 https://kind-slip-86b.notion.site/2998a2c2bfdb806a86eef035defb62a8?source=copy_link
 
 Windows11, Anaconda, RTX 5070 GPU (or RTX 4070 SUPER)
