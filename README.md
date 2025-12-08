@@ -1,6 +1,8 @@
 # Satellite Image Building Area Segmentation
 https://kind-slip-86b.notion.site/2998a2c2bfdb806a86eef035defb62a8?source=copy_link
 
+[Satellite_Image_Building_Area_Segmentation.pdf](https://github.com/user-attachments/files/24026078/Satellite_Image_Building_Area_Segmentation.pdf)
+
 Windows11, Anaconda, RTX 5070 GPU (or RTX 4070 SUPER)
 
 <br />
